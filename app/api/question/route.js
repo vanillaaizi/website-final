@@ -7,6 +7,15 @@ export const dynamic = 'force-dynamic';
 /**
  * Retrieves a random Jeopardy question
  */
+
+// questions = [
+
+//   {
+//     number: 1,
+//     question: "123"
+//   }
+// ]
+
 export async function GET() {
   const res = await axios.get('https://jservice.io/api/random')
 
