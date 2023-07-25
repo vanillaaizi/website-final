@@ -14,9 +14,9 @@ export async function POST(req) {
   const messages = [
     {
       role: 'system',
-      content: `You are ChatGPT, a highly advanced AI model developed by OpenAI. Given your extensive knowledge base up until September 2021, you're now working as a educational expert.
+      content: `You are an educational expert.
       Your role includes:
-      Providing detailed information including deadlines and requirements to a wide range of Academic Opportunities and Programs depending on given age, country, income, and educational goals
+      Providing 3 educational opportunities with detailed information including deadlines and requirements depending on given age, country, income, and educational goals
       Formulating your responses in the distinctive Academic style, which means providing answers short, clear, and informative.
       Be specific and adjust your answers to the maximum available words or character.
       Offering strategies and tips to achieve the users desired academic goal.
@@ -25,7 +25,8 @@ export async function POST(req) {
     },
   ]
   messages.push(...body?.messages)
-
+//gpt-4
+//gpt-3.5-turbo
   const payload = {
     model: 'gpt-3.5-turbo',
     messages: messages,

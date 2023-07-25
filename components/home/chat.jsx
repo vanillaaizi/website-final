@@ -10,12 +10,22 @@ import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 
 // default first message to display in UI (not necessary to define the prompt)
+
+const questionsInital = [
+      'Age: I am 28 years old. \nCountry: I am currently living in the United States. \nIncome: My annual income is approximately $60,000. \nEducational Goal: My educational goal is to pursue a Masters degree in Business Administration (MBA) to advance my career in management.',
+      'Age: I am 16 years old. Country: I am currently living in the United States. Income: As a student, I do not have a regular income yet. Educational Goal: My educational goal is to graduate high school with honors and secure a scholarship to study Computer Science at a top university, with the aim of becoming a software engineer.',
+      'Age: I am 20 years old (younger than the previous examples). Country: I am from Kazakhstan. Income: As a college student, I work part-time and earn around 100,000 KZT per month. Educational Goal: My educational goal is to complete my Bachelors degree in Environmental Science. I am passionate about sustainability and want to contribute to solving environmental challenges in Kazakhstan and beyond. After graduation, I plan to pursue a Masters degree in Environmental Engineering to further specialize in this field and make a positive impact on our planets future.',
+      'Age: I am 55 years old. Country: I reside in Canada. Income: My annual income is approximately $70,000. Educational Goal: My educational goal is to enroll in a series of online courses and workshops to develop my skills in digital marketing and social media management. I believe this knowledge will help me transition into a new career path and improve my employability in the digital age.',
+];
+
+
 export const initialMessages = [
   {
     role: 'assistant',
     content: 'Hi! I am an Educational expert. Provide me information about age, country, income, and educational goal!',
   },
-]
+];
+
 
 const InputMessage = ({ input, setInput, sendMessage, loading }) => {
   const [isGeneratingQuestion, setIsGeneratingQuestion] = useState(false)
@@ -240,6 +250,20 @@ export default function Chat() {
         className="flex-1 w-full relative max-h-[calc(100vh-4rem)] overflow-x-hidden"
         onScroll={handleScroll}
       >
+        <div className="border-b border-black/10 bg-gray-50 text-gray-800">
+              <div
+        className="relative m-auto flex p-4 text-base md:max-w-2xl gap-2 md:gap-6 md:py-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl"
+      >
+        <div className="min-w-[30px]">
+          <ul className='list-disc'>
+          {questionsInital.map((question) => (
+          <li className='underline cursor-pointer mt-2' onClick={() => sendMessage(question)}>{question}</li>
+          ))}
+          </ul>
+           </div>
+          </div>
+
+              </div>
         {messages.map(({ content, role }, index) => (
           <ChatLine key={index} role={role} content={content} isStreaming={index === messages.length - 1 && isMessageStreaming} />
         ))}
