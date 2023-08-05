@@ -251,19 +251,8 @@ export default function Chat() {
         onScroll={handleScroll}
       >
         <div className="border-b border-black/10 bg-gray-50 text-gray-800">
-              <div
-        className="relative m-auto flex p-4 text-base md:max-w-2xl gap-2 md:gap-6 md:py-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl"
-      >
-        <div className="min-w-[30px]">
-          <ul className='list-disc'>
-          {questionsInital.map((question) => (
-          <li className='underline cursor-pointer mt-2' onClick={() => sendMessage(question)}>{question}</li>
-          ))}
-          </ul>
-           </div>
-          </div>
-
-              </div>
+          {/* ... your code here ... */}
+        </div>
         {messages.map(({ content, role }, index) => (
           <ChatLine key={index} role={role} content={content} isStreaming={index === messages.length - 1 && isMessageStreaming} />
         ))}
