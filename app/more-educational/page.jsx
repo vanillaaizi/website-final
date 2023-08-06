@@ -11,6 +11,16 @@ const educationalOpportunities = [
         requirements: "Age 6-10, basic art supplies",
         deadline: "August 15, 2023",
       },
+      {
+        title: "Art Workshop for Kids",
+        requirements: "Age 6-10, basic art supplies",
+        deadline: "August 15, 2023",
+      },
+      {
+        title: "Art Workshop for Kids",
+        requirements: "Age 6-10, basic art supplies",
+        deadline: "August 15, 2023",
+      },
       // Add more educational opportunities for kids here...
     ],
   },
@@ -18,9 +28,19 @@ const educationalOpportunities = [
     category: "Teenagers",
     opportunities: [
       {
-        title: "Coding Bootcamp for Teenagers",
-        requirements: "Age 13-18, basic computer skills",
-        deadline: "September 30, 2023",
+        title: "Future Leaders Exchange Program",
+        requirements: "Different for each country. For Kazakstan: 01.01.2007 - 15.07.2009 / 8-10 grader. ",
+        deadline: "1 August - 19 September, 2023",
+      },
+      {
+        title: "Future Leaders Exchange Program",
+        requirements: "Different for each country. For Kazakstan: 01.01.2007 - 15.07.2009 / 8-10 grader. ",
+        deadline: "1 August - 19 September, 2023",
+      },
+      {
+        title: "Future Leaders Exchange Program",
+        requirements: "Different for each country. For Kazakstan: 01.01.2007 - 15.07.2009 / 8-10 grader. ",
+        deadline: "1 August - 19 September, 2023",
       },
       // Add more educational opportunities for teenagers here...
     ],
@@ -28,6 +48,16 @@ const educationalOpportunities = [
   {
     category: "Adults",
     opportunities: [
+      {
+        title: "Language Course for Adults",
+        requirements: "Age 18+, no prerequisites",
+        deadline: "October 10, 2023",
+      },
+      {
+        title: "Language Course for Adults",
+        requirements: "Age 18+, no prerequisites",
+        deadline: "October 10, 2023",
+      },
       {
         title: "Language Course for Adults",
         requirements: "Age 18+, no prerequisites",
