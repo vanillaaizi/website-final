@@ -2,16 +2,14 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { throttle } from '@/lib/throttle';
 import { ChatLine, LoadingChatLine } from './chat-line';
-import { PaperAirplaneIcon } from '@heroicons/react/24/outline'; // Remove duplicate import for PaperAirplaneIcon
+import { PaperAirplaneIcon, AcademicCapIcon } from '@heroicons/react/24/outline'; // Remove duplicate import for PaperAirplaneIcon
 import cx from 'classnames';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useMessages } from './useMessages';
 
 
-// default first message to display in UI (not necessary to define the prompt)
-
-const InitialMessage = ({ sendMessage, setLoading }) => {
+  const InitialMessage = ({ sendMessage, setLoading }) => {
   const questions = [
     'Age: I am 28 years old. \nCountry: I am currently living in the United States. \nIncome: My annual income is approximately $60,000. \nEducational Goal: My educational goal is to pursue a Masters degree in Business Administration (MBA) to advance my career in management.',
     'Age: I am 16 years old. Country: I am currently living in the United States. Income: As a student, I do not have a regular income yet. Educational Goal: My educational goal is to graduate high school with honors and secure a scholarship to study Computer Science at a top university, with the aim of becoming a software engineer.',
@@ -27,7 +25,7 @@ const InitialMessage = ({ sendMessage, setLoading }) => {
   return (
     <div>
       <p className="text-gray-800">
-        This is an Educational expert. Feel free to ask any question!
+        This an Educational expert. Feel free to ask anything
       </p>
       <div className="mt-4 flex gap-4">
         {questions.map((question, index) => (
@@ -44,6 +42,9 @@ const InitialMessage = ({ sendMessage, setLoading }) => {
     </div>
   );
 };
+//default first message to display in UI (not necessary to define the prompt)
+
+
 
 export default function Chat() {
   const [input, setInput] = useState('');
@@ -130,19 +131,6 @@ export default function Chat() {
     </div>
   );
 }
-
-
-// export const initialMessages = [
-//   {
-//     role: 'assistant',
-//     content: 'Hi! I am an Educational expert. Provide me information about age, country, income, and educational goal!',
-//   },
-// ];
-
-// const handleButtonClick = (question) => {
-//   setLoading(true);
-//   sendMessage(question);
-// };
 
 const InputMessage = ({ input, setInput, sendMessage, loading }) => {
   const [isGeneratingQuestion, setIsGeneratingQuestion] = useState(false);
